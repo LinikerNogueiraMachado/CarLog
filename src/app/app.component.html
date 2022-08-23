@@ -2,8 +2,8 @@
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
+    font-size: 19px;
+    color: #aa2c2c;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -22,10 +22,6 @@
     margin: 0;
   }
 
-  .spacer {
-    flex: 1;
-  }
-
   .toolbar {
     position: absolute;
     top: 0;
@@ -34,50 +30,20 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
-    color: white;
+    justify-content: center;
+    background-color: #2b2b2b;
+    color: #aa2c2c;
     font-weight: 600;
-  }
-
-  .toolbar img {
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 8px;
-  }
-
-  .toolbar #youtube-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
-
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
-    opacity: 0.8;
+    font-size: 2rem;
   }
 
   .content {
     display: flex;
-    margin: 82px auto 32px;
+    margin: 20vh auto;
     padding: 0 16px;
-    max-width: 960px;
     flex-direction: column;
     align-items: center;
-  }
-
-  svg.material-icons {
-    height: 24px;
-    width: auto;
-  }
-
-  svg.material-icons:not(:last-child) {
-    margin-right: 8px;
-  }
-
-  .card svg.material-icons path {
-    fill: #888;
+    background: #ffffff;
   }
 
   .card-container {
@@ -90,8 +56,8 @@
   .card {
     all: unset;
     border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
+    border: 1px solid rgb(202, 202, 202);
+    background: transparent;
     height: 40px;
     width: 200px;
     margin: 0 8px 16px;
@@ -108,188 +74,94 @@
     margin-right: 0;
   }
 
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
   .card-container .card:not(.highlight-card) {
     cursor: pointer;
   }
 
   .card-container .card:not(.highlight-card):hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
+    box-shadow: 0 4px 17px #00000059;
+    border: 1px solid #3f3f3f;
+    color: #aa2c2c;
+    background: #cac9c9;
+    text-transform:uppercase;
+    font-weight: 900;
   }
 
   .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
     position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
+    background: #eee;
+    margin-top: 14vh;
+    margin-bottom: 23vh;
   }
 
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: #aa2c2c;;
     text-decoration: none;
   }
 
   a:hover {
-    color: #125699;
+    color: #aa2c2c;
+    text-transform:uppercase;
+    font-weight: 900;
   }
 
   .terminal {
     position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-size: contain;
   }
 
   .terminal::before {
-    content: "\2022 \2022 \2022";
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
+    background: #ffffff;
   }
 
   .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
+    height: 60px;
+    width: 60px;
     margin: 8px;
     background-color: white;
-    border: 1px solid #eeeeee;
+    border-radius: 6px;    
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
+    box-shadow:
+    0 6px 7px rgb(0, 38, 255),
+    0 1px 7px rgb(247, 0, 255);
+    transition: .2s ease-out;
   }
 
   .circle-link:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
+    box-shadow:
+    0 0 10px rgb(98, 0, 255),
+    0 0 20px rgb(153, 0, 255),
+    0 0 30px rgb(255, 0, 119)
+    ;
+    border-radius: 6px;
   }
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
     .card-container > *:not(.circle-link) ,
-    .terminal {
+    .terminal img ,
+    .card, .highlight-card, .card-small img{
       width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
+      margin-top: 50vh;
+      margin-bottom: 20vh;
     }
   }
 
   @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
+    .card, .highlight-card, .card-small img{
+      width: 100%;
+      margin-top: 20vh;
     }
   }
 </style>
@@ -303,94 +175,56 @@
 
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
-<h1>{{title}}</h1>
+<img src="../assets/img/Bentley-Continental-3D-Rotating.gif" alt="">
   </div>
-
-  <!-- Resources -->
-  <h2></h2>
-  <p></p>
 
   <div class="card-container">
     <a class="card" target="_blank" rel="noopener" href="#">
-      <span></span>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
-      <span></span>
-      </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://material.angular.io">
-      <span></span>
-    </a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://blog.angular.io/">
-      <span></span></a>
-
-    <a class="card" target="_blank" rel="noopener" href="https://angular.io/devtools/">
-      <span></span>
+      <span>Saiber mais</span>
     </a>
 
   </div>
 
   <!-- Next Steps -->
-  <h2></h2>
-  <p></p>
+  <h2>Opções de cores</h2>
 
   <input type="hidden" #selection>
 
   <div class="card-container">
     <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-      <span></span>
+      <span>Prata Metálico</span>
     </button>
 
     <button class="card card-small" (click)="selection.value = 'material'" tabindex="0">
-      <span></span>
+      <span>Azul Metálico</span>
     </button>
 
     <button class="card card-small" (click)="selection.value = 'pwa'" tabindex="0">
-      <span></span>
+      <span>Black</span>
     </button>
 
     <button class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
-      <span></span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'test'" tabindex="0">
-      <span></span>
-    </button>
-
-    <button class="card card-small" (click)="selection.value = 'build'" tabindex="0">
-      <span></span>
+      <span>Amarelo Metálico</span>
     </button>
   </div>
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
-      <pre *ngSwitchDefault></pre>
-      <pre *ngSwitchCase="'material'"></pre>
-      <pre *ngSwitchCase="'pwa'"></pre>
-      <pre *ngSwitchCase="'dependency'"></pre>
-      <pre *ngSwitchCase="'test'"></pre>
-      <pre *ngSwitchCase="'build'"></pre>
+      <pre *ngSwitchDefault><img src="../assets/img/bentley-continental-silver.png"></pre>
+      <pre *ngSwitchCase="'material'"><img src="../assets/img/Bentley-Continental-blue.png" alt=""></pre>
+      <pre *ngSwitchCase="'pwa'"><img src="../assets/img/Bentley-Continental-black.png" alt=""></pre>
+      <pre *ngSwitchCase="'dependency'"><img src="../assets/img/bentley-continental-yellow.png" alt=""></pre>
   </div>
 
   <!-- Links -->
   <div class="card-container">
-    <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/find/?keywords=angular" target="_blank" rel="noopener">
-        <title></title>
+    <a class="circle-link" title="Veja codigo fonte em github" href="https://github.com/LinikerNogueiraMachado/CarLog.git" target="_blank" rel="noopener">
+      <img src="../assets/img/icons/logo-github.svg" alt="">
     </a>
 
-    <a class="circle-link" title="" href="#" target="_blank" rel="noopener">
-        <title></title>
+    <a class="circle-link" title="link do linkedin" href="https://www.linkedin.com/in/liniker-nogueira-machado" target="_blank" rel="noopener">
+      <img src="../assets/img/icons/logo-linkedin.svg" alt="">
     </a>
   </div>
-
-  <!-- Footer -->
-  <footer>
-      <a href="#" target="_blank" rel="noopener">
-      </a>
-      <a href="#" target="_blank" rel="noopener">
-      </a>
-  </footer>
 </div>
 <router-outlet></router-outlet>
