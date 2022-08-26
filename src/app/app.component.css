@@ -170,6 +170,16 @@ a:hover {
   border-radius: 6px;
 }
 
+footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: default;
+  font-size: 17px;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.link) ,
@@ -182,7 +192,8 @@ a:hover {
 
 @media screen and (max-width: 713px) {
   .card-container ,
-  .card,img{
+  .card, img,
+  .card-ng img{
     width: 100%;
     margin-top: 0;
     margin-bottom: 20vh;
@@ -191,7 +202,8 @@ a:hover {
 
 @media screen and (max-width: 575px) {
   .card-container ,
-  .card,img{
+  .card, img,
+  .card-ng img{
     width: 100%;
     margin-top: 0;
     margin-bottom: 20vh;
