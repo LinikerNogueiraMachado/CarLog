@@ -12,8 +12,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 8px 0;
+h6,
+span {
+  margin: 8px 10px;
+  color: #afafaf;
+  font-weight: 100;
 }
 
 p {
@@ -73,13 +76,9 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
-  border-radius: 7px;
+  border-radius: 10px 50%;
   position: relative;
   transition: .5s ease-in-out;
-}
-
-.image-background:hover {
-
 }
 
 .card-container {
@@ -116,7 +115,9 @@ p {
 
 .card-container .card-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px #3f3f3f59, 6px 7px 3px rgb(255, 255, 255);
+  box-shadow:
+  0 4px 12px #3f3f3f59,
+  6px 7px 3px rgb(255, 255, 255);
   border: 1px solid #000000;
   color: #b1b1b1;
   background: #00000065;
