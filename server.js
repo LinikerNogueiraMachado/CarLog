@@ -1,15 +1,12 @@
-const
-express = require('express');
+const express = require('express');
+const path = require('path');
+const nomeApp = CarLog;
 const app = express();
-const appName = 'CarLog';
-const outputhPath = `${__dirname}/dist/${appName}`;
 
-app.use(express.static(outputhPath));
-app.get('/*', (req, res) =>{
-  res.sendFile(`${outputhPath}/index.html`);
+app.use(express.static(`${__dirname}/dist/${nomeApp}`));
 
-})
+app.get('/*', (req, res) => {
+res.sendFile(path.join(`${__dirname}/dist/${nomeApp}/index.html`));
+});
 
-app.listen(process.env.PORT);
-
-
+app.listen(process.env.PORT || 4200);
